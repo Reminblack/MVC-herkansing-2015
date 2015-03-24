@@ -92,6 +92,10 @@
                 <asp:BoundField HeaderText="Email" 
                  DataField="Email" 
                  SortExpression="Email"></asp:BoundField>
+                <asp:buttonfield buttontype="Button" 
+                 commandname="Select"
+                 headertext="Add Recepient" 
+                 text="Select"/>
             </Columns>
             <SelectedRowStyle ForeColor="White" Font-Bold="True" 
              BackColor="#738A9C"></SelectedRowStyle>
