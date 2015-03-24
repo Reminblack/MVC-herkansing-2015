@@ -27,7 +27,7 @@ namespace MailingList_REAL
             //send the message
             var smtp = new SmtpClient("smtp.gmail.com", 587)
                 {
-                    Credentials = new NetworkCredential("mailadress", "password"),
+                    Credentials = new NetworkCredential("VisserTestDev", "thisismerelyatest"),
                     EnableSsl = true
                 };
             smtp.Send(mail);
@@ -53,8 +53,12 @@ namespace MailingList_REAL
                 mail.IsBodyHtml = true;
 
                 //send the message
-                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-                NetworkCredential basicCredential = new NetworkCredential("mailaddress", "password");
+                var smtp = new SmtpClient("smtp.gmail.com", 587)
+                {
+                    Credentials = new NetworkCredential("VisserTestDev", "thisismerelyatest"),
+                    EnableSsl = true
+                };
+                //NetworkCredential basicCredential = new NetworkCredential("mailaddress", "password");
                 smtp.Send(mail);
             }
             else

@@ -102,6 +102,11 @@
             <RowStyle ForeColor="#8C4510" 
                BackColor="#FFF7E7"></RowStyle>
         </asp:GridView>
+        
+        <h3>Inhoud</h3>
+        <asp:TextBox ID="TextBox1" TextMode="multiline" runat="server" CssClass="textbox" />
+        <br />
+        <br />
         <asp:button id="mailTest" Text="MAILTEST" onClick="mailTest_Click" runat="server"/>
 
 </asp:Content>
