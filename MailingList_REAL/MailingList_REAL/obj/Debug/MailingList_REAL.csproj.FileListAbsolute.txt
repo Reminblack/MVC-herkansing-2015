@@ -1,0 +1,64 @@
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\MailingList_REAL.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\MailingList_REAL.pdb
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\Antlr3.Runtime.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.AspNet.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.Core.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OAuth.Consumer.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OAuth.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OpenId.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\EntityFramework.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\Microsoft.ScriptManager.MSAjax.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\Microsoft.ScriptManager.WebForms.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\Microsoft.Web.Infrastructure.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\System.Web.Optimization.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\System.Web.Providers.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\WebGrease.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\EntityFramework.xml
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.Core.xml
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OAuth.xml
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OAuth.Consumer.xml
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OpenId.xml
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.AspNet.xml
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\obj\Debug\MailingList_REAL.csprojResolveAssemblyReference.cache
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\obj\Debug\MailingList_REAL.dll
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\obj\Debug\MailingList_REAL.pdb
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\App_Data\MailingDb.mdf
+c:\users\bart de ruijter\documents\visual studio 2012\Projects\MailingList_REAL\MailingList_REAL\bin\App_Data\MailingDb_log.ldf
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\obj\Debug\MailingList_REAL.csprojResolveAssemblyReference.cache
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\obj\Debug\MailingList_REAL.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\App_Data\MailingDb.mdf
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\App_Data\MailingDb_log.ldf
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\MailingList_REAL.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\MailingList_REAL.pdb
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\Antlr3.Runtime.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.Core.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\EntityFramework.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\System.Web.Optimization.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\System.Web.Providers.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\WebGrease.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\EntityFramework.xml
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.Core.xml
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Reminblack\Documents\GitHub\MVC2015\MailingList_REAL\MailingList_REAL\obj\Debug\MailingList_REAL.pdb

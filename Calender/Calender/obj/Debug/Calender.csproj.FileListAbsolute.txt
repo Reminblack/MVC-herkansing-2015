@@ -1,0 +1,16 @@
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\bin\Debug\Calender.exe.config
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\bin\Debug\Calender.exe
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\bin\Debug\Calender.pdb
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\obj\Debug\Calender.Form1.resources
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\obj\Debug\Calender.NewItem.resources
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\obj\Debug\Calender.Properties.Resources.resources
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\obj\Debug\Calender.csproj.GenerateResource.Cache
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\obj\Debug\Calender.exe
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\obj\Debug\Calender.pdb
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\bin\Debug\EntityFramework.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\bin\Debug\EntityFramework.xml
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\obj\Debug\Calender.csprojResolveAssemblyReference.cache
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\bin\Debug\Database1.mdf
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\bin\Debug\Database1_log.ldf
+C:\Users\Reminblack\Documents\GitHub\MVC2015\Calender\Calender\obj\Debug\Calender.Form2.resources
