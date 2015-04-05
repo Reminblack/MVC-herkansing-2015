@@ -10,6 +10,8 @@
 namespace Webshop.Models
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
@@ -26,5 +28,44 @@ namespace Webshop.Models
         }
     
         public DbSet<Table> Tables { get; set; }
+    }
+
+    [Table("Table")]
+    public class Product
+    {
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public float Price { get; set; }
+        public string Description { get; set; }
+        public string Image { get; set; }
+        public int Stock { get; set; }
+    }
+
+    public class AddProductModel
+    {
+        [Required]
+        [Display(Name = "Product name")]
+        public string Name { get; set; }
+
+        [Required]
+        [DataType(DataType.Currency)]
+        [Display(Name = "Price")]
+        public float Price { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Description")]
+        public string Description { get; set; }
+
+        [Required]
+        [DataType(DataType.ImageUrl)]
+        [Display(Name = "Image")]
+        public string Image { get; set; }
+
+        [Required]
+        [Display(Name = "Stock")]
+        public int Stock { get; set; }
     }
 }

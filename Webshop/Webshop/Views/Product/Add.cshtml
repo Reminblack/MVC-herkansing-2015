@@ -1,0 +1,39 @@
+﻿@model Webshop.Models.AddProductModel
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registration Form</legend>
+        <ol> 
+            <li>
+                @Html.DisplayFor(m => m.Name)
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Price)
+                @Html.TextBoxFor(m => m.Price)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Image)
+                @Html.TextBoxFor(m => m.Image)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Stock)
+                @Html.TextBoxFor(m => m.Stock)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Description)
+                @Html.TextAreaFor(m => m.Description)
+            </li>
+        </ol>
+        <input type="submit" value="Register" />
+    </fieldset>
+}
