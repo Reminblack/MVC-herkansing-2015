@@ -11,7 +11,7 @@ namespace Webshop.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DefaultConnection")
+            : base("WebshopDbEntities")
         {
         }
 
