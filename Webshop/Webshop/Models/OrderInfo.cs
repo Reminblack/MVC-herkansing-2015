@@ -15,11 +15,7 @@ namespace Webshop.Models
     public partial class OrderInfo
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int Phone { get; set; }
-        public string Email { get; set; }
-        public byte HasOrdered { get; set; }
-        public string ZipCode { get; set; }
-        public string Street { get; set; }
+        public int UserId { get; set; }
+        public byte OrderStatus { get; set; }
     }
 }

@@ -24,13 +24,13 @@
         </td>
 
         <td>
-            @if(Request.IsAuthenticated)
+            @if(Roles.IsUserInRole("admin"))
             {
                 @Html.ActionLink("Edit", "Edit", "Product", new { id=Model.Id }, null)
                 @Html.ActionLink("Remove", "Remove", "Product", new { id=Model.Id }, null)
             } else {
                 @Html.ActionLink("Meer info", "Details", "Product", new { id=Model.Id }, null)
-                @Html.ActionLink("In winkelwagen plaatsen", "Add", "Basket", new { id=Model.Id }, null)
+                @Html.ActionLink("In winkelwagen plaatsen", "Add", "Basket", new { productId=Model.Id }, null)
                 @Html.ActionLink("Bestellen", "Buy", "Product", new { id=Model.Id }, null)
             }
         </td>

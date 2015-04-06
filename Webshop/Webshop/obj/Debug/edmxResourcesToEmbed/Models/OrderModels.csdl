@@ -3,6 +3,15 @@
   <EntityContainer Name="WebshopDbEntities1" p1:LazyLoadingEnabled="true">
     <EntitySet Name="Lt_OrderProduct" EntityType="WebshopDbModel1.Lt_OrderProduct" />
     <EntitySet Name="OrderInfoes" EntityType="WebshopDbModel1.OrderInfo" />
+    <AssociationSet Name="FK_Lt_OrderProduct_OrderInfo" Association="WebshopDbModel1.FK_Lt_OrderProduct_OrderInfo">
+      <End Role="OrderInfo" EntitySet="OrderInfoes" />
+      <End Role="Lt_OrderProduct" EntitySet="Lt_OrderProduct" />
+    </AssociationSet>
+    <EntitySet Name="Products" EntityType="WebshopDbModel1.Product" />
+    <AssociationSet Name="FK_Lt_OrderProduct_Product" Association="WebshopDbModel1.FK_Lt_OrderProduct_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Lt_OrderProduct" EntitySet="Lt_OrderProduct" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Lt_OrderProduct">
     <Key>
@@ -10,20 +19,55 @@
       <PropertyRef Name="ProductId" />
       <PropertyRef Name="Quantity" />
     </Key>
-    <Property Name="OrderId" Type="Int32" Nullable="false" />
-    <Property Name="ProductId" Type="Int32" Nullable="false" />
-    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Type="Int32" Name="OrderId" Nullable="false" />
+    <Property Type="Int32" Name="ProductId" Nullable="false" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+    <NavigationProperty Name="OrderInfo" Relationship="WebshopDbModel1.FK_Lt_OrderProduct_OrderInfo" FromRole="Lt_OrderProduct" ToRole="OrderInfo" />
+    <NavigationProperty Name="Product" Relationship="WebshopDbModel1.FK_Lt_OrderProduct_Product" FromRole="Lt_OrderProduct" ToRole="Product" />
   </EntityType>
   <EntityType Name="OrderInfo">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="Phone" Type="Int32" Nullable="false" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="HasOrdered" Type="Byte" Nullable="false" />
-    <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
-    <Property Name="Street" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Byte" Name="OrderStatus" Nullable="false" />
+    <NavigationProperty Name="Lt_OrderProduct" Relationship="WebshopDbModel1.FK_Lt_OrderProduct_OrderInfo" FromRole="OrderInfo" ToRole="Lt_OrderProduct" />
   </EntityType>
+  <Association Name="FK_Lt_OrderProduct_OrderInfo">
+    <End Type="WebshopDbModel1.OrderInfo" Role="OrderInfo" Multiplicity="1" />
+    <End Type="WebshopDbModel1.Lt_OrderProduct" Role="Lt_OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lt_OrderProduct">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="Price" Nullable="false" Precision="19" Scale="4" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="Image" MaxLength="Max" FixedLength="false" />
+    <Property Type="Int32" Name="Stock" Nullable="false" />
+    <NavigationProperty Name="Lt_OrderProduct" Relationship="WebshopDbModel1.FK_Lt_OrderProduct_Product" FromRole="Product" ToRole="Lt_OrderProduct" />
+  </EntityType>
+  <Association Name="FK_Lt_OrderProduct_Product">
+    <End Type="WebshopDbModel1.Product" Role="Product" Multiplicity="1" />
+    <End Type="WebshopDbModel1.Lt_OrderProduct" Role="Lt_OrderProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lt_OrderProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

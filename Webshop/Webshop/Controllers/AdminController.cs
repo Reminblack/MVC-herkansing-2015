@@ -9,7 +9,7 @@ namespace Webshop.Controllers
 {
     public class AdminController : Controller
     {
-        private WebshopDbEntities db = new WebshopDbEntities();
+        private WebshopDbEntities1 db = new WebshopDbEntities1();
 
         //
         // GET: /Admin/

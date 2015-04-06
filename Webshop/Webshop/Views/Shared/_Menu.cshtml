@@ -5,7 +5,7 @@
         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
         <li>@Html.ActionLink("All product", "Index", "Admin")</li>
 
-        @if (Request.IsAuthenticated)
+        @if (Roles.IsUserInRole("admin"))
         {
             <li>@Html.ActionLink("Add product", "Add", "Product")</li>
         }

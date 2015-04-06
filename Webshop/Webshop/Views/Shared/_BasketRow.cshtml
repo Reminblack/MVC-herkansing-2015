@@ -1,0 +1,26 @@
+﻿@model Webshop.Models.Product
+
+<table>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Name)
+        </td>
+    </tr>   
+    
+    <tr>
+        <td>
+            @if(Model.Image != null){
+                @Html.DisplayFor(modelItem => modelItem.Image)
+            } else {
+                <p>Geen</p>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Price)
+            @Html.DisplayFor(modelItem => modelItem.Stock)
+        </td>
+    </tr>
+</table>

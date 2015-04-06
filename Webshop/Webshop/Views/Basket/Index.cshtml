@@ -1,0 +1,7 @@
+﻿@model List<Webshop.Models.Product>
+
+
+<h1>Winkelwagen Overzicht</h1>
+@foreach(var order_product in Model){
+    @Html.Partial("_BasketRow", order_product)
+}
