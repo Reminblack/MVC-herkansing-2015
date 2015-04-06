@@ -1,0 +1,7 @@
+﻿@model List<Webshop.Models.Product>
+
+
+<h1>Producten Overzicht</h1>
+@foreach(var product in Model){
+    @Html.Partial("_ProductRow", product)
+}

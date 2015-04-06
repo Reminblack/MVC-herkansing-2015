@@ -29,9 +29,8 @@ namespace Webshop.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Add(ProductView model, string returnUrl)
+        public ActionResult Add(ProductViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {   
@@ -45,30 +44,36 @@ namespace Webshop.Controllers
             return View(model);
         }
 
-        //
-        // GET: /Product/Edit/[]
-
-        public ActionResult Edit(int id)
+        #region edit
+        public ActionResult Edit(int id, string returnUrl)
         {
-            Product productToEdit = db.Products.First(product => product.Id == id);
-
-            return View(productToEdit);
+            Product productToEdit = db.Products.Find(id);
+                return View(productToEdit);
+            
+            return RedirectToLocal(returnUrl); 
         }
 
         //
         // GET: /Product/Edit/[id]
 
-        public ActionResult Edit(ProductView model, int id, string returnUrl)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Product model, string returnUrl)
         {
+            if (model == null)
+            {
+                return RedirectToLocal(returnUrl); 
+            }
+
+            //model.Price = model.Price;
             if (ModelState.IsValid)
             {
                 try
                 {
-                    Product productToEdit = db.Products.First(product => product.Id == id);
+                    //Product productToEdit = db.Products.First(product => product.Id == (int)this.RouteData.Values["id"]);
 
-                    db.Products.Remove(productToEdit);
-                    db.Products.Add(generateProductFromModel(model));
-
+                    var currentProduct = db.Products.Find(model.Id);
+                    db.Entry(currentProduct).CurrentValues.SetValues(model);
                     db.SaveChanges();
                 }
                 catch (Exception e)
@@ -84,14 +89,41 @@ namespace Webshop.Controllers
 
         //
         // GET: /Product/Delete/[id]
+        #endregion
 
-        public ActionResult Remove(int itemToDelete)
+
+        public ActionResult Remove(int id)
         {
-            Product productToDelete = db.Products.First(product => product.Id == itemToDelete);
-            db.Products.Remove(productToDelete);
-            db.SaveChanges();
+            Product model = db.Products.Find(id);
+            return View(model);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Remove(Product product, string returnUrl)
+        {
+            if (ModelState.IsValid && product != null)
+            {
+                Product productToDelete = db.Products.Find(product.Id);
+                db.Products.Remove(productToDelete);
+                db.SaveChanges();
+            }
             return RedirectToAction("Index", "Product");
+        }
+
+
+        public ActionResult Details(int id)
+        {
+            Product model = db.Products.Find(id);
+
+            return View(model);
+        }
+
+        public ActionResult AddToBasket(int id)
+        {
+            Product model = db.Products.Find(id);
+
+            return RedirectToAction("Add", "Basket", new {product = model});
         }
 
         private ActionResult RedirectToLocal(string returnUrl)
@@ -106,14 +138,15 @@ namespace Webshop.Controllers
             }
         }
 
-        private Product generateProductFromModel(ProductView model){
+        private Product generateProductFromModel(ProductViewModel model){
             Product product = new Product();
             product.Name = model.Name;
             product.Image = model.Image;
             product.Description = model.Description;
             product.Price = model.Price;
             product.Stock = model.Stock;
-            
+
+
             return product;
         }
     }

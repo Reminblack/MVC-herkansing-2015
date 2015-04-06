@@ -165,6 +165,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BasketController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -172,6 +173,27 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Lt_OrderProduct.cs">
+      <DependentUpon>OrderModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderInfo.cs">
+      <DependentUpon>OrderModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderModels.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Product.cs">
       <DependentUpon>ProductModels.tt</DependentUpon>
     </Compile>
@@ -271,6 +293,23 @@
       <DependentUpon>ProductModels.edmx</DependentUpon>
       <LastGenOutput>ProductModels.cs</LastGenOutput>
     </Content>
+    <EntityDeploy Include="Models\OrderModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrderModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\OrderModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrderModels.edmx</DependentUpon>
+      <LastGenOutput>OrderModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\OrderModels.edmx.diagram">
+      <DependentUpon>OrderModels.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\OrderModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrderModels.edmx</DependentUpon>
+      <LastGenOutput>OrderModels.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -331,6 +370,8 @@
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Remove.cshtml" />
     <Content Include="Views\Shared\_ProductRow.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

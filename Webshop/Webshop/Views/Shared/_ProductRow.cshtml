@@ -24,8 +24,15 @@
         </td>
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=Model.Id })
+            @if(Request.IsAuthenticated)
+            {
+                @Html.ActionLink("Edit", "Edit", "Product", new { id=Model.Id }, null)
+                @Html.ActionLink("Remove", "Remove", "Product", new { id=Model.Id }, null)
+            } else {
+                @Html.ActionLink("Meer info", "Details", "Product", new { id=Model.Id }, null)
+                @Html.ActionLink("In winkelwagen plaatsen", "Add", "Basket", new { id=Model.Id }, null)
+                @Html.ActionLink("Bestellen", "Buy", "Product", new { id=Model.Id }, null)
+            }
         </td>
     </tr>
 </table>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebshopDbModel1StoreContainer" CdmEntityContainer="WebshopDbEntities1">
+    <EntitySetMapping Name="Lt_OrderProduct">
+      <EntityTypeMapping TypeName="WebshopDbModel1.Lt_OrderProduct">
+        <MappingFragment StoreEntitySet="Lt_OrderProduct">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderInfoes">
+      <EntityTypeMapping TypeName="WebshopDbModel1.OrderInfo">
+        <MappingFragment StoreEntitySet="OrderInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="HasOrdered" ColumnName="HasOrdered" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

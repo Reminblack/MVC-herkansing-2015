@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebshopDbModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WebshopDbEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Lt_OrderProduct" EntityType="WebshopDbModel1.Lt_OrderProduct" />
+    <EntitySet Name="OrderInfoes" EntityType="WebshopDbModel1.OrderInfo" />
+  </EntityContainer>
+  <EntityType Name="Lt_OrderProduct">
+    <Key>
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="Quantity" />
+    </Key>
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="HasOrdered" Type="Byte" Nullable="false" />
+    <Property Name="ZipCode" Type="String" Nullable="false" MaxLength="9" Unicode="false" FixedLength="false" />
+    <Property Name="Street" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

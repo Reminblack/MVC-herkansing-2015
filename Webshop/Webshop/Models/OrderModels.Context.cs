@@ -14,10 +14,10 @@ namespace Webshop.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WebshopDbEntities : DbContext
+    public partial class WebshopDbEntities1 : DbContext
     {
-        public WebshopDbEntities()
-            : base("name=WebshopDbEntities")
+        public WebshopDbEntities1()
+            : base("name=WebshopDbEntities1")
         {
         }
     
@@ -26,32 +26,32 @@ namespace Webshop.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Lt_OrderProduct> Lt_OrderProduct { get; set; }
+        public DbSet<OrderInfo> OrderInfoes { get; set; }
+
+
     }
 
-    public class ProductViewModel
+    public class OrderViewModel
     {
         [Required]
-        [Display(Name = "Product name")]
+        [Display(Name = "Name")]
         public string Name { get; set; }
 
         [Required]
-        [DataType(DataType.Currency)]
-        [Display(Name = "Price")]
-        //[DisplayFormat(DataFormatString = "{0:c}", ApplyFormatInEditMode = true)]
-        public decimal Price { get; set; }
+        [Display(Name = "Phonenumber")]
+        public int Phone { get; set; }
 
         [Required]
-        [DataType(DataType.Text)]
-        [Display(Name = "Description")]
-        public string Description { get; set; }
-
-        [DataType(DataType.ImageUrl)]
-        [Display(Name = "Image")]
-        public byte[] Image { get; set; }
+        [Display(Name = "Email")]
+        public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Stock")]
-        public int Stock { get; set; }
+        [Display(Name = "Zipcode")]
+        public string ZipCode { get; set; }
+
+        [Required]
+        [Display(Name = "Street")]
+        public string Street { get; set; }
     }
 }
