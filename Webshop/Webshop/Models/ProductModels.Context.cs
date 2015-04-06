@@ -11,7 +11,6 @@ namespace Webshop.Models
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
@@ -27,23 +26,10 @@ namespace Webshop.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Table> Tables { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 
-    [Table("Table")]
-    public class Product
-    {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public float Price { get; set; }
-        public string Description { get; set; }
-        public string Image { get; set; }
-        public int Stock { get; set; }
-    }
-
-    public class AddProductModel
+    public class ProductView
     {
         [Required]
         [Display(Name = "Product name")]
@@ -52,17 +38,16 @@ namespace Webshop.Models
         [Required]
         [DataType(DataType.Currency)]
         [Display(Name = "Price")]
-        public float Price { get; set; }
+        public decimal Price { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "Description")]
         public string Description { get; set; }
 
-        [Required]
         [DataType(DataType.ImageUrl)]
         [Display(Name = "Image")]
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
 
         [Required]
         [Display(Name = "Stock")]

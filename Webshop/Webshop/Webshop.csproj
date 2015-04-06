@@ -172,23 +172,23 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\product.Context.cs">
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>ProductModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>product.Context.tt</DependentUpon>
+      <DependentUpon>ProductModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\product.cs">
+    <Compile Include="Models\ProductModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>product.tt</DependentUpon>
+      <DependentUpon>ProductModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\product.Designer.cs">
+    <Compile Include="Models\ProductModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>product.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Table.cs">
-      <DependentUpon>product.tt</DependentUpon>
+      <DependentUpon>ProductModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -253,23 +253,23 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\product.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>product.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="Images\webshop_banner.png" />
-    <Content Include="Models\product.Context.tt">
+    <EntityDeploy Include="Models\ProductModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProductModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ProductModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>product.edmx</DependentUpon>
-      <LastGenOutput>product.Context.cs</LastGenOutput>
+      <DependentUpon>ProductModels.edmx</DependentUpon>
+      <LastGenOutput>ProductModels.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\product.edmx.diagram">
-      <DependentUpon>product.edmx</DependentUpon>
+    <Content Include="Models\ProductModels.edmx.diagram">
+      <DependentUpon>ProductModels.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\product.tt">
+    <Content Include="Models\ProductModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>product.edmx</DependentUpon>
-      <LastGenOutput>product.cs</LastGenOutput>
+      <DependentUpon>ProductModels.edmx</DependentUpon>
+      <LastGenOutput>ProductModels.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

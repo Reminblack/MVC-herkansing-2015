@@ -1,5 +1,31 @@
-﻿@{
-    ViewBag.Title = "_ProductRow";
-}
+﻿@model Webshop.Models.Product
 
-<h2>_ProductRow</h2>
+<table>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Name)
+        </td>
+    </tr>   
+    
+    <tr>
+        <td>
+            @if(Model.Image != null){
+                @Html.DisplayFor(modelItem => modelItem.Image)
+            } else {
+                <p>Geen</p>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Price)
+            @Html.DisplayFor(modelItem => modelItem.Stock)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=Model.Id })
+        </td>
+    </tr>
+</table>

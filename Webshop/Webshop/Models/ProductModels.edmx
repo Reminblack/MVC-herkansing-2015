@@ -4,11 +4,11 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="furniture.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="furnitureStoreContainer">
-          <EntitySet Name="Table" EntityType="furniture.Store.Table" store:Type="Tables" Schema="dbo" />
+      <Schema Namespace="WebshopDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="WebshopDbModelStoreContainer">
+          <EntitySet Name="Product" EntityType="WebshopDbModel.Store.Product" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
-        <EntityType Name="Table">
+        <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -23,11 +23,11 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="furniture" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="WebshopDbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="WebshopDbEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="Tables" EntityType="furniture.Table" />
+          <EntitySet Name="Products" EntityType="WebshopDbModel.Product" />
         </EntityContainer>
-        <EntityType Name="Table">
+        <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -43,10 +43,10 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="furnitureStoreContainer" CdmEntityContainer="WebshopDbEntities">
-          <EntitySetMapping Name="Tables">
-            <EntityTypeMapping TypeName="furniture.Table">
-              <MappingFragment StoreEntitySet="Table">
+        <EntityContainerMapping StorageEntityContainer="WebshopDbModelStoreContainer" CdmEntityContainer="WebshopDbEntities">
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="WebshopDbModel.Product">
+              <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
