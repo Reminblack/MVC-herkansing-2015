@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="WebshopDbModelStoreContainer" CdmEntityContainer="WebshopDbEntities1">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="WebshopDbModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Lt_OrderProduct">
       <EntityTypeMapping TypeName="WebshopDbModel.Lt_OrderProduct">
         <MappingFragment StoreEntitySet="Lt_OrderProduct">
@@ -29,15 +37,16 @@
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserEmail">
+    <EntitySetMapping Name="UserEmails">
       <EntityTypeMapping TypeName="WebshopDbModel.UserEmail">
         <MappingFragment StoreEntitySet="UserEmail">
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

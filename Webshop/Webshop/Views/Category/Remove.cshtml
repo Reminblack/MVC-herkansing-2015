@@ -1,0 +1,19 @@
+﻿@model Webshop.Models.Category
+
+@{
+    ViewBag.Title = "Remove Category";
+}
+
+<h2>Remove</h2>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Edit product</legend>
+        
+        <p>Are you sure you want to delete this product?</p>
+
+        <input type="submit" value="DELETE" />
+    </fieldset>
+}

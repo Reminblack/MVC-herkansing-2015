@@ -10,7 +10,7 @@
     @Html.ValidationSummary()
 
     <fieldset>
-        <legend>Registration Form</legend>
+        <legend>Add product</legend>
         <ol> 
             <li>
                 @Html.DisplayFor(m => m.Name)
@@ -33,7 +33,11 @@
                 @Html.LabelFor(m => m.Description)
                 @Html.TextAreaFor(m => m.Description)
             </li>
+            <li>
+                @Html.LabelFor(m => m.Category)
+                @Html.DropDownListFor(m => m.Category, new SelectList((List<String>)TempData["categories"], null))
+            </li>
         </ol>
-        <input type="submit" value="Register" />
+        <input type="submit" value="create" />
     </fieldset>
 }

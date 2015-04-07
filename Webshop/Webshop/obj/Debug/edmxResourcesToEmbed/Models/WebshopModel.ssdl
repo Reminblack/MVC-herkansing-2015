@@ -1,11 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WebshopDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="WebshopDbModelStoreContainer">
+    <EntitySet Name="Category" EntityType="WebshopDbModel.Store.Category" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Lt_OrderProduct" EntityType="WebshopDbModel.Store.Lt_OrderProduct" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="OrderInfo" EntityType="WebshopDbModel.Store.OrderInfo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Product" EntityType="WebshopDbModel.Store.Product" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserEmail" EntityType="WebshopDbModel.Store.UserEmail" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Product_Category" Association="WebshopDbModel.Store.FK_Product_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Lt_OrderProduct">
     <Key>
       <PropertyRef Name="Id" />
@@ -33,6 +45,7 @@
     <Property Name="Description" Type="varchar(max)" Nullable="false" />
     <Property Name="Image" Type="image" />
     <Property Name="Stock" Type="int" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="UserEmail">
     <Key>
@@ -42,4 +55,16 @@
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="Email" Type="varchar(max)" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Product_Category">
+    <End Role="Category" Type="WebshopDbModel.Store.Category" Multiplicity="1" />
+    <End Role="Product" Type="WebshopDbModel.Store.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

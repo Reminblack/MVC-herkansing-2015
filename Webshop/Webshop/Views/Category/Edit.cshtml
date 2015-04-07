@@ -1,0 +1,22 @@
+﻿@model Webshop.Models.Category
+
+@{
+    ViewBag.Title = "Edit Category";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Edit product</legend>
+        <ol> 
+            <li>
+                @Html.LabelFor(m => m.CategoryName)
+                @Html.TextBoxFor(m => m.CategoryName)
+            </li>
+        </ol>
+        <input type="submit" value="Register" />
+    </fieldset>
+}

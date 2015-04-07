@@ -22,6 +22,7 @@ namespace Webshop.Controllers
         public ActionResult Index()
         {
             OrderInfo orderInfo = db.OrderInfoes.FirstOrDefault(item => (item.UserId == (int)WebSecurity.CurrentUserId) && (item.OrderStatus == 0));
+
             if (orderInfo != null)
             {
                 List<Lt_OrderProduct> orders = db.Lt_OrderProduct.Where(item => item.OrderId == orderInfo.Id).ToList();
@@ -31,7 +32,6 @@ namespace Webshop.Controllers
                 {
                     products.Add(db.Products.Find(p.ProductId));
                 }
-
 
                 return View(products);
             }

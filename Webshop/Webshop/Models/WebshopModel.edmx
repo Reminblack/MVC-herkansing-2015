@@ -6,11 +6,23 @@
     <edmx:StorageModels>
       <Schema Namespace="WebshopDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="WebshopDbModelStoreContainer">
+          <EntitySet Name="Category" EntityType="WebshopDbModel.Store.Category" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Lt_OrderProduct" EntityType="WebshopDbModel.Store.Lt_OrderProduct" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="OrderInfo" EntityType="WebshopDbModel.Store.OrderInfo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Product" EntityType="WebshopDbModel.Store.Product" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="UserEmail" EntityType="WebshopDbModel.Store.UserEmail" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Product_Category" Association="WebshopDbModel.Store.FK_Product_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Lt_OrderProduct">
           <Key>
             <PropertyRef Name="Id" />
@@ -38,6 +50,7 @@
           <Property Name="Description" Type="varchar(max)" Nullable="false" />
           <Property Name="Image" Type="image" />
           <Property Name="Stock" Type="int" Nullable="false" />
+          <Property Name="category_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="UserEmail">
           <Key>
@@ -47,17 +60,42 @@
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="Email" Type="varchar(max)" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Product_Category">
+          <End Role="Category" Type="WebshopDbModel.Store.Category" Multiplicity="1" />
+          <End Role="Product" Type="WebshopDbModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WebshopDbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="WebshopDbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="WebshopDbModel.Category" />
           <EntitySet Name="Lt_OrderProduct" EntityType="WebshopDbModel.Lt_OrderProduct" />
           <EntitySet Name="OrderInfoes" EntityType="WebshopDbModel.OrderInfo" />
           <EntitySet Name="Products" EntityType="WebshopDbModel.Product" />
           <EntitySet Name="UserEmails" EntityType="WebshopDbModel.UserEmail" />
+          <AssociationSet Name="FK_Product_Category" Association="WebshopDbModel.FK_Product_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="WebshopDbModel.FK_Product_Category" FromRole="Category" ToRole="Product" />
+        </EntityType>
         <EntityType Name="Lt_OrderProduct">
           <Key>
             <PropertyRef Name="Id" />
@@ -85,6 +123,8 @@
           <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Stock" Type="Int32" Nullable="false" />
+          <Property Name="category_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="WebshopDbModel.FK_Product_Category" FromRole="Product" ToRole="Category" />
         </EntityType>
         <EntityType Name="UserEmail">
           <Key>
@@ -94,12 +134,32 @@
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
         </EntityType>
+        <Association Name="FK_Product_Category">
+          <End Role="Category" Type="WebshopDbModel.Category" Multiplicity="1" />
+          <End Role="Product" Type="WebshopDbModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="WebshopDbModelStoreContainer" CdmEntityContainer="WebshopDbEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="WebshopDbModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Lt_OrderProduct">
             <EntityTypeMapping TypeName="WebshopDbModel.Lt_OrderProduct">
               <MappingFragment StoreEntitySet="Lt_OrderProduct">
@@ -128,6 +188,7 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -20,9 +20,17 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => modelItem.Price)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => modelItem.Stock)
         </td>
-
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Category.CategoryName)
+        </td>
+            
         <td>
             @if(Roles.IsUserInRole("admin"))
             {

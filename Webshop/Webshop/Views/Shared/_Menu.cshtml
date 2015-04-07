@@ -1,14 +1,13 @@
 ﻿<nav>
     <ul id="menu">
         <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
         <li>@Html.ActionLink("All products", "Index", "Admin")</li>
 
         @if (Roles.IsUserInRole("admin"))
         {
             <li>@Html.ActionLink("Add product", "Add", "Product")</li>
             <li>@Html.ActionLink("Bestellingen", "Orders", "Admin")</li>
+            <li>@Html.ActionLink("Categories", "Index", "Category")</li>
         } else {
             <li>@Html.ActionLink("Cart", "Index", "Basket")</li>   
         }
