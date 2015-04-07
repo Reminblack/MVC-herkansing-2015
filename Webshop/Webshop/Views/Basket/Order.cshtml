@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Order";
+}
+
+<h2>Add</h2>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Edit product</legend>
+        
+        <p>Are you sure you want to Order these products?</p>
+
+        <input type="submit" value="yes" />
+    </fieldset>
+}

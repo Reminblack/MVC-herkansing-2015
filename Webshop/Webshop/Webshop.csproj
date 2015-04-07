@@ -172,31 +172,35 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mailman.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\Lt_OrderProduct.cs">
-      <DependentUpon>WebshopModels.tt</DependentUpon>
+      <DependentUpon>WebshopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderInfo.cs">
-      <DependentUpon>WebshopModels.tt</DependentUpon>
+      <DependentUpon>WebshopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>WebshopModels.tt</DependentUpon>
+      <DependentUpon>WebshopModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\WebshopModels.Context.cs">
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\UserEmail.cs">
+      <DependentUpon>WebshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WebshopModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WebshopModels.Context.tt</DependentUpon>
+      <DependentUpon>WebshopModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\WebshopModels.cs">
+    <Compile Include="Models\WebshopModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WebshopModels.tt</DependentUpon>
+      <DependentUpon>WebshopModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\WebshopModels.Designer.cs">
+    <Compile Include="Models\WebshopModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WebshopModels.edmx</DependentUpon>
+      <DependentUpon>WebshopModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -262,22 +266,22 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\webshop_banner.png" />
-    <EntityDeploy Include="Models\WebshopModels.edmx">
+    <EntityDeploy Include="Models\WebshopModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WebshopModels.Designer.cs</LastGenOutput>
+      <LastGenOutput>WebshopModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\WebshopModels.Context.tt">
+    <Content Include="Models\WebshopModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WebshopModels.edmx</DependentUpon>
-      <LastGenOutput>WebshopModels.Context.cs</LastGenOutput>
+      <DependentUpon>WebshopModel.edmx</DependentUpon>
+      <LastGenOutput>WebshopModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\WebshopModels.edmx.diagram">
-      <DependentUpon>WebshopModels.edmx</DependentUpon>
+    <Content Include="Models\WebshopModel.edmx.diagram">
+      <DependentUpon>WebshopModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\WebshopModels.tt">
+    <Content Include="Models\WebshopModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WebshopModels.edmx</DependentUpon>
-      <LastGenOutput>WebshopModels.cs</LastGenOutput>
+      <DependentUpon>WebshopModel.edmx</DependentUpon>
+      <LastGenOutput>WebshopModel.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -343,6 +347,10 @@
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Basket\Index.cshtml" />
     <Content Include="Views\Shared\_BasketRow.cshtml" />
+    <Content Include="Views\Admin\Orders.cshtml" />
+    <Content Include="Views\Shared\_OrderRow.cshtml" />
+    <Content Include="Views\Basket\Order.cshtml" />
+    <Content Include="Views\Basket\OrderError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

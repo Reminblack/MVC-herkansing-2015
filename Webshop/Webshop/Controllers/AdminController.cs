@@ -9,7 +9,7 @@ namespace Webshop.Controllers
 {
     public class AdminController : Controller
     {
-        private WebshopDbEntities1 db = new WebshopDbEntities1();
+        private WebshopDbEntities db = new WebshopDbEntities();
 
         //
         // GET: /Admin/
@@ -21,5 +21,16 @@ namespace Webshop.Controllers
             //return RedirectToAction("Index", "Product");
         }
 
+
+        public ActionResult Orders()
+        {
+            List<OrderInfo> OI = db.OrderInfoes.Where(item => item.OrderStatus != 0).ToList();
+            if (OI != null)
+                return View(OI);
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
     }
 }

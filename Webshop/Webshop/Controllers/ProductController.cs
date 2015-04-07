@@ -9,7 +9,7 @@ namespace Webshop.Controllers
 {
     public class ProductController : Controller
     {
-        private WebshopDbEntities1 db = new WebshopDbEntities1();
+        private WebshopDbEntities db = new WebshopDbEntities();
         
         //
         // GET: /Product/

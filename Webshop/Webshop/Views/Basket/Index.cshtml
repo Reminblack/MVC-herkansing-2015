@@ -5,3 +5,9 @@
 @foreach(var order_product in Model){
     @Html.Partial("_BasketRow", order_product)
 }
+
+    <table>
+        <tr>
+            <td>@Html.ActionLink("Order", "Order", "Basket")</td>
+        </tr>
+    </table>

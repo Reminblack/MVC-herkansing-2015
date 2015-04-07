@@ -1,0 +1,7 @@
+﻿@model List<Webshop.Models.OrderInfo>
+
+
+<h1>Winkelwagen Overzicht</h1>
+@foreach(var OI in Model){
+    @Html.Partial("_OrderRow", OI)
+}

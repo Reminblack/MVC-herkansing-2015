@@ -81,6 +81,5 @@ F:\GitHub\MVC-herkansing-2015\Webshop\Webshop\bin\DotNetOpenAuth.OAuth.Consumer.
 F:\GitHub\MVC-herkansing-2015\Webshop\Webshop\bin\DotNetOpenAuth.OAuth.xml
 F:\GitHub\MVC-herkansing-2015\Webshop\Webshop\bin\DotNetOpenAuth.OpenId.xml
 F:\GitHub\MVC-herkansing-2015\Webshop\Webshop\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-F:\GitHub\MVC-herkansing-2015\Webshop\Webshop\obj\Debug\Webshop.csprojResolveAssemblyReference.cache
 F:\GitHub\MVC-herkansing-2015\Webshop\Webshop\obj\Debug\Webshop.dll
 F:\GitHub\MVC-herkansing-2015\Webshop\Webshop\obj\Debug\Webshop.pdb

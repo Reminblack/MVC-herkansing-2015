@@ -20,6 +20,8 @@ namespace Webshop.Controllers
         //
         // GET: /Account/Login
 
+        private WebshopDbEntities db = new WebshopDbEntities();
+
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -79,9 +81,11 @@ namespace Webshop.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Email = model.Email}, false);
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+
+                    TempData["registermodel"] = model;
+                    return RedirectToAction("SetEmail", "Account");
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -93,6 +97,17 @@ namespace Webshop.Controllers
             return View(model);
         }
 
+        public ActionResult SetEmail()
+        {
+            RegisterModel model = (RegisterModel)TempData["registermodel"];
+            UserEmail UE = db.UserEmails.Create();
+            UE.UserId = WebSecurity.CurrentUserId;
+            UE.Email = model.Email;
+            db.UserEmails.Add(UE);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
+        }
         //
         // POST: /Account/Disassociate
 

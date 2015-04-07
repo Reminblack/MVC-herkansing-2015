@@ -4,6 +4,7 @@
     <EntitySet Name="Lt_OrderProduct" EntityType="WebshopDbModel.Store.Lt_OrderProduct" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="OrderInfo" EntityType="WebshopDbModel.Store.OrderInfo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Product" EntityType="WebshopDbModel.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserEmail" EntityType="WebshopDbModel.Store.UserEmail" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Lt_OrderProduct">
     <Key>
@@ -32,5 +33,13 @@
     <Property Name="Description" Type="varchar(max)" Nullable="false" />
     <Property Name="Image" Type="image" />
     <Property Name="Stock" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserEmail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
   </EntityType>
 </Schema>

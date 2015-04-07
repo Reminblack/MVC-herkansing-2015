@@ -14,7 +14,7 @@ namespace Webshop.Controllers
     [InitializeSimpleMembership]
     public class BasketController : Controller
     {
-        private WebshopDbEntities1 db = new WebshopDbEntities1();
+        private WebshopDbEntities db = new WebshopDbEntities();
 
         //
         // GET: /Basket/
@@ -22,16 +22,20 @@ namespace Webshop.Controllers
         public ActionResult Index()
         {
             OrderInfo orderInfo = db.OrderInfoes.FirstOrDefault(item => (item.UserId == (int)WebSecurity.CurrentUserId) && (item.OrderStatus == 0));
-            List<Lt_OrderProduct> orders = db.Lt_OrderProduct.Where(item => item.OrderId == orderInfo.Id).ToList();
-
-            List<Product> products = new List<Product>();
-            foreach(Lt_OrderProduct p in orders)
+            if (orderInfo != null)
             {
-                products.Add(db.Products.Find(p.ProductId));
+                List<Lt_OrderProduct> orders = db.Lt_OrderProduct.Where(item => item.OrderId == orderInfo.Id).ToList();
+
+                List<Product> products = new List<Product>();
+                foreach (Lt_OrderProduct p in orders)
+                {
+                    products.Add(db.Products.Find(p.ProductId));
+                }
+
+
+                return View(products);
             }
-
-
-            return View(products);
+            return RedirectToAction("OrderError", "Basket");
         }
 
         public ActionResult Add(int productId, int quantity = 1)
@@ -67,6 +71,34 @@ namespace Webshop.Controllers
             db.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Order()
+        {
+            return View();
+        }
+
+        
+
+        [HttpPost]
+        [InitializeSimpleMembership]
+        [ValidateAntiForgeryToken]
+        public ActionResult Order(string returnUrl)
+        {
+            OrderInfo orderInfo = db.OrderInfoes.FirstOrDefault(item => (item.UserId == (int)WebSecurity.CurrentUserId) && (item.OrderStatus == 0));
+
+            orderInfo.OrderStatus = 1;
+            db.Entry(orderInfo).CurrentValues.SetValues(orderInfo);
+            db.SaveChanges();
+
+            Mailman.SendMail("noreply@furnitureWebsop.com", db.UserEmails.First(item => item.UserId == (int)WebSecurity.CurrentUserId).Email, "Order at FurnitureWebshop", "You have ordered some Furniture");
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult OrderError()
+        {
+            return View();
         }
 
         public OrderInfo newOrder()
