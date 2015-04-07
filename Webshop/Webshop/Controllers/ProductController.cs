@@ -25,7 +25,6 @@ namespace Webshop.Controllers
 
         public ActionResult Add()
         {
-            TempData["categories"] = db.Categories.Select(item => item.CategoryName).ToList();
             return View();
         }
 
@@ -35,8 +34,6 @@ namespace Webshop.Controllers
         {
             if (ModelState.IsValid)
             {   
-
-
                 db.Products.Add(generateProductFromModel(model));
                 db.SaveChanges();
                 return RedirectToLocal(returnUrl);
@@ -148,7 +145,7 @@ namespace Webshop.Controllers
             product.Description = model.Description;
             product.Price = model.Price;
             product.Stock = model.Stock;
-            product.category_id = db.Categories.First(item => item.CategoryName == model.Category).Id;
+
 
             return product;
         }

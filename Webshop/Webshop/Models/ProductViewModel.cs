@@ -30,9 +30,5 @@ namespace Webshop.Models
         [Required]
         [Display(Name = "Stock")]
         public int Stock { get; set; }
-
-        [Required]
-        [Display(Name = "Category")]
-        public string Category { get; set; }
     }
 }

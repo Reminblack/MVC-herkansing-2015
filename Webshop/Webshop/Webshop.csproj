@@ -166,7 +166,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BasketController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -175,10 +174,6 @@
     </Compile>
     <Compile Include="Mailman.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Category.cs">
-      <DependentUpon>WebshopModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CategoryModels.cs" />
     <Compile Include="Models\Lt_OrderProduct.cs">
       <DependentUpon>WebshopModel.tt</DependentUpon>
     </Compile>
@@ -356,10 +351,6 @@
     <Content Include="Views\Shared\_OrderRow.cshtml" />
     <Content Include="Views\Basket\Order.cshtml" />
     <Content Include="Views\Basket\OrderError.cshtml" />
-    <Content Include="Views\Category\Index.cshtml" />
-    <Content Include="Views\Category\Add.cshtml" />
-    <Content Include="Views\Category\Remove.cshtml" />
-    <Content Include="Views\Category\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

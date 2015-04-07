@@ -25,7 +25,6 @@ namespace Webshop.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Category> Categories { get; set; }
         public DbSet<Lt_OrderProduct> Lt_OrderProduct { get; set; }
         public DbSet<OrderInfo> OrderInfoes { get; set; }
         public DbSet<Product> Products { get; set; }
